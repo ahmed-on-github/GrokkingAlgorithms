@@ -47,15 +47,15 @@ int maxVal_recursive2( int *arr , unsigned int len){
 int main(int argc, char **argv){
 	if(argc < 2 || argc > 3 || argv == NULL || argv[1] == NULL ){
 		printf("argc = %d\n", argc);
-
+	
 		printf("Invalid Arguments passed!\n");
 		return -1;
 		printf("argv[1] = %s\n", argv[1]);
 		printf("argv[1][0] = %c\n", argv[1][0]);
 	}
-    int arr [] = {10 , 1 , 2 ,0, 5, 3, 6 , 9 , 8 , 14, 7};
+	int arr [] = {10 , 1 , 2 ,0, 5, 3, 6 , 9 , 8 , 14, 7};
 	//int arr [] = {0,1,2,3,5,6,7,8,9,10,14};
-    int size = sizeof(arr)/sizeof( arr[0]);
+	int size = sizeof(arr)/sizeof( arr[0]);
 	int maxVal = 0;
 	if(argv[1][0] == '1' )
 		maxVal = maxVal_recursive1(arr, size);
