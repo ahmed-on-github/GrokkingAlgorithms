@@ -7,7 +7,7 @@ void swap( int *a, int *b){
     *b = temp;
 }
 
-void quicksort(int * arr , int low,int high ){ /**Still needs debugging**/
+void quicksort(int * arr , int low,int high ){ 
 
     int pivotIdx = high;
     int i = low-1, j= high;
