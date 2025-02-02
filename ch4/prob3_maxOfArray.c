@@ -1,5 +1,10 @@
 #include <stdio.h>
 
+/* This file is compiled and ran as: 
+ * > gcc prob3_maxOfArray.c -o out.exe
+   > ./out.exe 1
+   > ./out.exe 2
+ */
 
 int max(int a, int b){
 	return ((a>b)?a:b);
