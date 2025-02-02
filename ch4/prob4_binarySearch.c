@@ -27,11 +27,11 @@ int bin_search( int * arr ,int val , unsigned int arr_len){
 	}
 	/*recursive case*/
 	if( val > arr[mid] ){
-		low = mid+1;
-		offset += low; /*Offset from the address 'arr' passed in the 1st call*/
+	    low = mid+1;
+	    offset += low; /*Offset from the address 'arr' passed in the 1st call*/
 	}
 	else { /* val < arr[mid] */
-		high = mid-1;
+	    high = mid-1;
 	}
 	return bin_search( (int*)(arr+low), val , high - low + 1 /* +1 bec both indices are included*/);
 }
