@@ -6,26 +6,36 @@ int max(int a, int b){
 }
 
 int maxVal_recursive1( int *arr , unsigned int len){
-	/*Base case; Length = 1*/
-	if(len == 1){
-		return arr[0];
+	if( arr != NULL && len > 0){
+		/*Base case; Length = 1*/
+		if(len == 1){
+			return arr[0];
+		}
+		/*Recursive case*/
+		return max(arr[0], maxVal_recursive1(arr+1, len-1));
 	}
-	/*Recursive case*/
-	return max(arr[0], maxVal_recursive1(arr+1, len-1));
+	else{
+		return (int)0x80000000; /*return smallest int value*/
+	}
 }
 
 int maxVal_recursive2( int *arr , unsigned int len){
-	/*Base case; Length = 1*/
-	if(len == 1){
-		return arr[0];
+	if( arr != NULL && len > 0){
+		/*Base case; Length = 1*/
+		if(len == 1){
+			return arr[0];
+		}
+		/*Recursive case*/
+		int midIdx = len/2; /*Integer division*/
+		
+		int max1 = maxVal_recursive2(arr, midIdx);
+		int max2 = maxVal_recursive2(arr + midIdx, midIdx + (len&0x01) /*Consider odd value of 'len' */ );
+		
+		return max(max1, max2);
 	}
-	/*Recursive case*/
-	int midIdx = len/2; /*Integer division*/
-	
-	int max1 = maxVal_recursive2(arr, midIdx);
-	int max2 = maxVal_recursive2(arr + midIdx, midIdx + (len&0x01) /*Consider odd value of 'len' */ );
-	
-	return max(max1, max2);
+	else{
+		return (int)0x80000000; /*return smallest int value*/
+	}
 }
 
 
