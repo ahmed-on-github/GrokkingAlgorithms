@@ -1,2 +1,2 @@
 # GrokkingAlgorithms
-Solving Some examples in the "grokking algorithms" book in C language
+Solving Some examples in the "Grokking Algorithms" book in C language.
