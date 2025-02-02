@@ -19,11 +19,11 @@ int bin_search( int * arr ,int val , unsigned int arr_len){
 	if( val == arr[mid]  && 0 <= high ){
 	    mid = mid + offset;
 	    offset = 0 ; /*reset for next calls*/
-		return mid;
+	    return mid;
 	}
-	else if ( high <= 0 ){ /*Do not use else as it will ignore the value in equality (which doesn't mean 'va' is not found)*/
+	else if ( high <= 0 ){ /*Do not use else as it will ignore the value inequality (which doesn't mean 'val' is not found)*/
 	    offset = 0; /*reset for next calls*/
-		return -1;  /*not found*/
+	    return -1;  /*not found*/
 	}
 	/*recursive case*/
 	if( val > arr[mid] ){
